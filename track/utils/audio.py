@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from track.synth.oscillators import saw_wave
+from track.synth.oscillators import triangle_wave
 import soundfile as sf
 from numpy.typing import NDArray
 
