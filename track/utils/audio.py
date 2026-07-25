@@ -1,14 +1,14 @@
 from pathlib import Path
 
-from track.synth.oscillators import triangle_wave
+import numpy as np
 import soundfile as sf
 from numpy.typing import NDArray
 
 
 def save_wav(
-        path: str,
-        audio: NDArray,
-        sample_rate: int = 44100,
+    path: str,
+    audio: NDArray[np.float32],
+    sample_rate: int = 44100,
 ) -> None:
     """Save audio to a WAV file.
 
@@ -19,4 +19,4 @@ def save_wav(
     """
     output_path = Path(path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    sf.write(path, audio, sample_rate)
+    sf.write(output_path, audio, sample_rate)
